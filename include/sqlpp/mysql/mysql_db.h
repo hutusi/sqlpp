@@ -14,7 +14,7 @@ public:
 	}
 
 	bool connect(const char* host, const char* user, const char* passwd, const char* db){
-		return mysql_real_connect(mysql_, host, user, passwd, db, 0, NULL, 0);
+		return (0 != mysql_real_connect(mysql_, host, user, passwd, db, 0, NULL, 0));
 	}
 
 	void close(){
