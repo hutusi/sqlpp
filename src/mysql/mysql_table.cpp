@@ -11,13 +11,9 @@ MysqlTable::~MysqlTable(){
 	mysql_free_result(query_result_);
 }
 
-bool MysqlTable::execute(const char *sql, size_t len){
-	if (!(db_ && db_->connected())) {return false;}
-	return(0 == mysql_real_query(db_->mysql(), sql, len));
-}
-
 int MysqlTable::query(const char *sql, size_t len){
-	if (!execute(sql, len)) {return -1;}
+	if (!db_) {return -1;}
+	if (0 != db_->execute(sql, len)) {return -1;}
 
 	mysql_free_result(query_result_);
 	query_result_ = mysql_store_result(db_->mysql());

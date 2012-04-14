@@ -14,10 +14,12 @@
     <ClInclude Include="..\include\sqlpp\defs.h" />
     <ClInclude Include="..\include\sqlpp\mysql\mysql_db.h" />
     <ClInclude Include="..\include\sqlpp\mysql\mysql_table.h" />
+    <ClInclude Include="..\include\sqlpp\sqlite\sqlite_db.h" />
     <ClInclude Include="..\include\sqlpp\sql_db.h" />
     <ClInclude Include="..\include\sqlpp\sql_table.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\mysql\mysql_db.cpp" />
     <ClCompile Include="..\src\mysql\mysql_table.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

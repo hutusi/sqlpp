@@ -13,9 +13,8 @@ public:
 	MysqlTable(MysqlDb* db, const char* name);
 	virtual ~MysqlTable();
 
-	virtual bool execute(const char *sql, size_t len);
 	virtual int query(const char *sql, size_t len);
-	virtual bool get_field(const char* field, std::string& out, int rowno = 1);
+	virtual bool get_field(const char* field, std::string& out, int rowno);	
 
 private:
 	MysqlDb* db_;
