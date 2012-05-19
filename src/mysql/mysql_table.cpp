@@ -43,6 +43,6 @@ bool MysqlTable::get_field(const char* field, std::string& out, int rowno){
 	mysql_data_seek(query_result_, rowno - 1);
 	MYSQL_ROW row = mysql_fetch_row(query_result_);
 	if (!row) {return false;}
-	out =  row[index];
+	if (row[index]) { out =  row[index]; } // if value of row[index] is NULL...
 	return true;
 }
